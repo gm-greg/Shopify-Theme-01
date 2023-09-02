@@ -182,12 +182,6 @@
     </div>
   </div>
 
-  <div>
-    <img src="{{ 'saveVSgamesNeonLogo.png' | asset_img_url: 'medium' }}" class="logo">
-  </div>
-
-</div>
-
 {% schema %}
   {
     "name": "Header",
@@ -198,7 +192,8 @@
         "label": "Store Name",
         "default": "Mobile Menu",
         "info": "This is for the title on the mobile menu window."
-      }, {
+      }, 
+      {
         "type": "link_list",
         "id": "menu",
         "label": "Header Menu",
