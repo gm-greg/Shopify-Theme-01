@@ -1,9 +1,14 @@
 {
-  "name": "Template 404",
   "sections": {
-     "template": {
-        "type": "template-404"
-     }
+    "template": {
+      "type": "template-404",
+      "settings": {
+        "title": "ERROR - 404",
+        "subtext_title": "We're sorry.  Something went wrong and\/or the page you are looking for does not exist."
+      }
+    }
   },
-  "order": ["template"]
+  "order": [
+    "template"
+  ]
 }
