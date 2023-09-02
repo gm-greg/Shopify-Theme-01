@@ -5,6 +5,7 @@
         "type": "header",
         "settings": {
           "mobile_menu_title": "Store 01",
+          "desktop_menu_title": "Store 01",
           "menu": "main-menu"
         }
       }
