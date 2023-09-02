@@ -18,11 +18,6 @@
         </button>
       </div>
 
-      <!-- STEP 2: CREATE THE ALPINEJS VARIABLE FOR THE MOBILE MENU OPEN/CLOSE -->
-      {% comment %} x-data="{ mobileMenuOpen: false }" {% endcomment %}
-
-      <!-- STEP 3: USE THIS MOBILE MENU TEMPLATE - pasted in the div below -->
-
 
 
       <!-- NAVIGATION MENU -->
@@ -42,9 +37,7 @@
               </button>
 
               <!-- STEP 1: Place the div under the button tag -->
-              {% comment %} The x-show accepts boolean values, and since open is a boolean when we initialized it as false, we can add it to the submenu to tell it when to render. {% endcomment %}
-              {% comment %} The @click.away="open=false" makes it so when you click away from the drop down menu, it disappears {% endcomment %}
-                <div
+               <div
                 x-show="{{ link_handle }}"
                 @click.away="{{ link_handle }}=false"
                 class="absolute z-10 -ml-5 mt-5 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2"> <div class="shadow-lg border ring-black ring-opacity-5 overflow-hidden rounded-lg">
@@ -67,26 +60,7 @@
                 </div>
               </div>
 
-              <!--
-              STEP 2: IMPORT ALPINEJS in theme.liquid
-              Place this in the header of the the theme.liquid file
-              <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-              STEP 3: INITIATE THE ALPINE DATA VARIABLE
-
-              x-data="{ open: false }""
-
-              STEP 4: ADD CLICK EVENT TO THE BUTTON OF THE MENU/LINK ITEM
-
-              x-on:click="open = ! open"
-
-              STEP 5: ATTRIBUTES FOR THE DROPDOWN:
-
-              x-show="open"
-              @click.away="open = false"
-
-              -->
-
+              
             </div>
           {% else %}
             <div class="relative">
