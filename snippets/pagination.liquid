@@ -1,3 +1,34 @@
-{% if paginate.pages > 0 %}
-  Hello World
+{% if pagination.pages > 0 %}
+  <nav role="navigation" class="flex-display justify-center my-8">
+    {% if pagination.previous.url %}
+      <a
+        class="border border-gray-600 text-gray-600 hover:bg-gray-600 hover:text-white px-8 py-3 font-medium mx-1 rounded-sm"
+        href="{{ pagination.previous.url }}"
+      >
+        {{ pagination.previous.title }}
+      </a>
+    {% endif %}
+    {% for part in pagination.parts %}
+      {% if part.is_link %}
+        <a
+          class="border border-gray-600 text-gray-600 hover:bg-gray-600 hover:text-white px-8 py-3 font-medium mx-1 rounded-sm"
+          href="{{ part.url }}"
+        >
+          {{ part.title }}
+        </a>
+      {% else %}
+        <span class="border border-gray-600 bg-gray-600 text-white px-8 py-3 font-medium mx-1 rounded-sm">
+          {{- part.title -}}
+        </span>
+      {% endif %}
+    {% endfor %}
+    {% if pagination.next.url %}
+      <a
+        class="border border-gray-600 text-gray-600 hover:bg-gray-600 hover:text-white px-8 py-3 font-medium mx-1 rounded-sm"
+        href="{{ pagination.next.url }}"
+      >
+        {{ pagination.next.title }}
+      </a>
+    {% endif %}
+  </nav>
 {% endif %}
