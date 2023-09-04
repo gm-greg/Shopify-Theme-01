@@ -1,11 +1,7 @@
 {
     "sections": {
         "template": {
-            "type": "template-collection",
-            "blocks": {
-
-            },
-            "block_order": []
+            "type": "template-collection"
         }
     },
     "order": ["template"]
