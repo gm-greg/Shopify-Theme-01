@@ -6,6 +6,10 @@
         limit: section.settings.number_of_products_displayed
       %}
         {% render 'product-card', product_product: product %}
+      {% else %}
+        {% for item in (1..3) %}
+          {% render 'product-card-placeholder' %}
+        {% endfor %}
       {% endfor %}
     </div>
   </div>
