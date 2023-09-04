@@ -3,6 +3,9 @@
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
+        "title": "Featured Collection",
+        "featured_collection": "frontpage",
+        "number_of_products_displayed": 6
       }
     }
   },
