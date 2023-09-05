@@ -1,12 +1,33 @@
 <div class="flex flex-col items-center my-8">
   {% form 'contact' %}
-    <label for="contact_name">Name:</label>
-    <input type="text" name="contact[name]" id="contact_name">
-    <label for="contact_email">E-Mail:</label>
-    <input type="email" name="contact[email]" id="contact_email">
-    <label for="contact_message">Enter Your Message:</label>
-    <textarea name="contact[body]" id="contact_message"></textarea>
-    <input type="submit" value="Submit Message">
+    <div class="max-w-6xl mx-auto justify-center flex items-center px-4">
+      <div class="flex px-1 mb-3">
+        <div class="px-3 md:w-1/2">
+          <label class="uppercase text-xs text-gray-500 font-medium" for="contact_name">Name:</label>
+          <input class="border py-3 px-4 mb-3 text-gray-700 w-full" type="text" name="contact[name]" id="contact_name">
+        </div>
+        <div class="px-3 md:w-1/2">
+          <label class="uppercase text-xs text-gray-500 font-medium" for="contact_email">E-Mail:</label>
+          <input
+            class="border py-3 px-4 mb-3 text-gray-700 w-full"
+            type="email"
+            name="contact[email]"
+            id="contact_email"
+          >
+        </div>
+        <div class="flex px-1 mb-3">
+          <div class="px-3 w-full">
+            <label class="uppercase text-xs text-gray-500 font-medium" for="contact_message">Enter Your Message:</label>
+            <textarea name="contact[body]" id="contact_message"></textarea>
+          </div>
+        </div>
+        <div class="flex px-1 mb-3">
+          <div class="px-3 w-full">
+            <input type="submit" value="Submit Message">
+          </div>
+        </div>
+      </div>
+    </div>
   {% endform %}
 </div>
 
