@@ -29,6 +29,8 @@
   }
 </style>
 
+{% assign selected_variant = product.selected_or_first_available_variant %}
+
 <div class="max-w-6xl mx-auto my-y">
   <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
     <div class="product--medias">
@@ -61,7 +63,7 @@
     </div>
     <div class="product--information sticky top-5 p-2">
       {% form 'product', product %}
-        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+        <input type="hidden" name="id" value="{{ product.selected_variant.id }}">
         <div class="my-3">
           <span class="text-xs text-gray-500">
             {{ product.vendor }}
@@ -71,7 +73,7 @@
           <h1 class="text-3xl text-gray-900">{{ product.title }}</h1>
         </div>
         <div class="my-3">
-          {% assign product_price = product.selected_or_first_available_variant %}
+          {% assign product_price = product.selected_variant %}
           <span class="text-base text-gray-500 line-through">
             {{ product_price.compare_at_price | money }}
           </span>
@@ -128,11 +130,11 @@
             type="sumbit"
             name="Add"
             class="hover:bg-gray-900 text-white rounded-sm my-2 w-full px-6 py-4 bg-gray-700"
-            {% if product.selected_or_first_available_variant.available == false %}
+            {% if product.selected_variant.available == false %}
               disabled
             {% endif %}
           >
-            {% if product.selected_or_first_available_variant.available == false %}
+            {% if product.selected_variant.available == false %}
               SOLD OUT
             {% else %}
               Add to Cart
