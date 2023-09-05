@@ -7,7 +7,11 @@ export const content = [
   './templates/customers/*.liquid',
 ];
 export const theme = {
-  extend: {},
+  extend: {
+    "height": {
+      "94": "22rem"
+    }
+  },
 };
 export const plugins = [];
 

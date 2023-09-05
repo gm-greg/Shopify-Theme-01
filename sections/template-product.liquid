@@ -1,3 +1,7 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
 <div class="max-w-6xl mx-auto my-y">
   <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
     <div class="product--medias">
@@ -8,7 +12,40 @@
           </div>
         {% endfor %}
       </div>
+      <div class="md:hidden">
+        <div class="swipper h-94">
+          <div class="swipper-wrapper">
+            {% for media in product.media %}
+              <div class="swipper-slide">
+                <div class="h-80 overflow-hidden p-2">
+                  {% render 'product-media', media: media %}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+
+          <div class="swipper-pagination"></div>
+
+          <div class="swipper-button-prev"></div>
+
+          <div class="swipper-button-next"></div>
+        </div>
+      </div>
     </div>
     <div class="product--information"></div>
   </div>
 </div>
+
+<script>
+  const swipper = new Swiper('.swiper', {
+    direction: 'horizontal',
+
+    pagination: {
+      el: '.swiper-pagination',
+    },
+    navigation: {
+      prevEl: '.swiper-button-prev',
+      nextEl: '.swiper-button-next',
+    },
+  });
+</script>
