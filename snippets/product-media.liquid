@@ -2,7 +2,7 @@
   {% when 'image' %}
     <img
       class="w-full h-full object-cover"
-      src="{{ media.image_url | img_url: 'medium' }}"
+      src="{{ media.image_url | img_url: 'large' }}"
       alt="{{ media.preview_image.alt }}"
     >
   {% when 'video' %}
