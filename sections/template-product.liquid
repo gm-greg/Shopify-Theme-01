@@ -144,7 +144,7 @@
                 name="Add"
                 class="hover:bg-gray-900 text-white rounded-sm my-2 w-full px-6 py-4 bg-gray-700"
                 {% if selected_variant.available == false %}
-                    
+                    disabled
                 {% endif %}
               >
                 {% if selected_variant.available == false %}
@@ -219,8 +219,8 @@
         "name": "Description",
         "limit": 1
       },      {
-        "type": "checkout_buttons",
-        "name": "Checkout Buttons",
+        "type": "checkout_button",
+        "name": "Checkout Button",
         "limit": 1
       }
     ]
