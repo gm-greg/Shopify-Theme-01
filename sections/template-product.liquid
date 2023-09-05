@@ -78,7 +78,7 @@
             <h1 class="text-3xl text-gray-900">{{ product.title }}</h1>
           </div>
     
-      {% when 'price' %}
+        {% when 'price' %}
           <div class="my-3">
          
             <span class="text-base text-gray-500 line-through">
@@ -90,7 +90,7 @@
               <span class="px-5 py-1 text-sm font-bold bg-red-500 rounded-full text-white mx-4"> SALE </span>
             {% endif %}
           </div>
-          {% when 'variant_selector' %}
+        {% when 'variant_selector' %}
               <div class="my-3">
                 {% unless product.has_only_default_variant %}
                   <div data-url="{{ product.url }}" data-section="{{ section.id }}">
@@ -118,7 +118,7 @@
                   </div>
                 {% endunless %}
               </div>
-            {% when 'quantity' %}
+        {% when 'quantity' %}
                     
               <div class="my-3">
                 <label for="Quantity-{{ section.id }}">Quantity</label>
@@ -133,11 +133,11 @@
                   >
                 </div>
               </div>
-            {% when 'description' %}
+        {% when 'description' %}
                 <div class="my-3">
                   <p class="text-gray-700">{{ product.description }}</p>
                 </div>
-            {% when 'checkout_button' %}
+        {% when 'checkout_button' %}
                  <div class="my-3">
                     <button
                       type="sumbit"
@@ -187,7 +187,7 @@
 
 {% schema %}
   {
-    "name": "Product",
+    "name": "Template Product",
     "blocks": [
       {
         "type": "vendor",
@@ -222,7 +222,8 @@
         "type": "checkout_buttons",
         "name": "Checkout Buttons",
         "limit": 1
-      },
+      }
     ]
   }
 {% endschema %}
+
