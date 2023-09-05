@@ -6,9 +6,9 @@
       alt="{{ media.preview_image.alt }}"
     >
   {% when 'video' %}
-    {{ media | video_tag: class: 'w-full h-80 object-cover' }}
+    {{ media | video_tag: controls: true, class: 'w-full h-80 object-cover' }}
   {% when 'external_video' %}
-    {{ media | external_video_tag: class: 'w-full h-80 object-cover' | controls: true }}
+    {{ media | external_video_tag: class: 'w-full h-80 object-cover' }}
   {% when 'model' %}
     {{ media | model_viewer_tag }}
   {% else %}
