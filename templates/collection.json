@@ -5,18 +5,9 @@
       "settings": {
         "number_of_products_per_page": 6
       }
-    },
-    "5f9c939e-45f0-4d7d-b6a6-9f0772ce4002": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "High End Collection",
-        "featured_collection": "high-end-collection",
-        "number_of_products_displayed": 6
-      }
     }
   },
   "order": [
-    "template",
-    "5f9c939e-45f0-4d7d-b6a6-9f0772ce4002"
+    "template"
   ]
 }
