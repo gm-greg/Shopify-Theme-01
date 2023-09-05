@@ -138,22 +138,22 @@
                   <p class="text-gray-700">{{ product.description }}</p>
                 </div>
         {% when 'checkout_button' %}
-                 <div class="my-3">
-                    <button
-                      type="sumbit"
-                      name="Add"
-                      class="hover:bg-gray-900 text-white rounded-sm my-2 w-full px-6 py-4 bg-gray-700"
-                      {% if selected_variant.available == false %}
-                        disabled
-                      {% endif %}
-                    >
-                      {% if selected_variant.available == false %}
-                        SOLD OUT
-                      {% else %}
-                        Add to Cart
-                      {% endif %}
-                    </button>
-                  </div>
+            <div class="my-3">
+              <button
+                type="sumbit"
+                name="Add"
+                class="hover:bg-gray-900 text-white rounded-sm my-2 w-full px-6 py-4 bg-gray-700"
+                {% if selected_variant.available == false %}
+                    
+                {% endif %}
+              >
+                {% if selected_variant.available == false %}
+                  SOLD OUT
+                {% else %}
+                  Add to Cart
+                {% endif %}
+              </button>
+            </div>
             
           {% else %}     
   {% endcase %}
