@@ -7,9 +7,18 @@
         "featured_collection": "frontpage",
         "number_of_products_displayed": 3
       }
+    },
+    "33c07044-11e4-464f-869e-0935d579a2a0": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Budget Collection",
+        "featured_collection": "seasonal-collection",
+        "number_of_products_displayed": 6
+      }
     }
   },
   "order": [
-    "featured-collection"
+    "featured-collection",
+    "33c07044-11e4-464f-869e-0935d579a2a0"
   ]
 }
