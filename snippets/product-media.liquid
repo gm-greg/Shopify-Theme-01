@@ -2,11 +2,11 @@
   {% when 'image' %}
     <img
       class="w-full h-full object-cover"
-      src="{{ media.image_url | img_url: 'large' }}"
+      src="{{ media | img_url: 'large' }}"
       alt="{{ media.preview_image.alt }}"
     >
   {% when 'video' %}
-    {{ media.video_tag | class: 'w-full h-80 object-cover' }}
+    {{ media | video_tag: class: 'w-full h-80 object-cover' }}
   {% when 'external_video' %}
     {{ media | external_video_tag: class: 'w-full h-80 object-cover' | controls: true }}
   {% when 'model' %}
