@@ -219,7 +219,7 @@
 
         updateFormID() {
           const form_input = document.querySelector('#product-form').querySelector('input[name="id"]');
-          form_input = this.currentVariant.id;
+          form_input.value = this.currentVariant.id;
         }
 
       } 
