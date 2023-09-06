@@ -7,21 +7,35 @@
         <div class="flex justify-center items-center">
             <form action="{{ routes.search_url }}" method="get" class="flex rounded border">
                 <input type="search" name="q" placeholder="Search" value="{{ search.terms | escape }}" class="px-4 py-2 w-80 border-none">
-                
-
-                
-
+                <button type="submit" class="text-white bg-gray-700 hover:bg-gray-500 rounded-full px-2 py-2 border my-1 mx-1">{% render 'icon-search' %}</button>
             </form>
-            <button type="submit" class="text-white bg-gray-700 hover:bg-gray-500 rounded-full px-2 py-2 border">{% render 'icon-search' %}</button>
+            
         </div>
-        {% for item in search.results %}
-            {% case item.object_type %}
-                {% when 'product' %}
-                    {% render 'product-card', product_product: item %}
-                {% else %}
+        {% if search.performed %}
+            {% if search.results.size > 0 %}
+            <div class="max-w-6xl mx-auto">
+                <p class="text-gray-500 text-center my-10">
+                    {{ search.results.size | escape }} results for the search term: {{ search.terms | escape }}
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                 {% for item in search.results %}
+                    {% case item.object_type %}
+                        {% when 'product' %}
+                            {% render 'product-card', product_product: item %}
+                        {% else %}
                     
-            {% endcase %}
-        {% endfor %}
+                    {% endcase %}
+                {% endfor %}
+                </div>
+            </div>
+   
+            {% else %}
+                <div class="text-center my-4">
+                    <p>No Results Found for the search term: {{ search.terms }}. Try using a different keyword.</p>
+                </div>
+            {% endif %}
+        {% endif %}
+
         {% render 'pagination', pagination: paginate %}
     {% endpaginate %}
 </div>
