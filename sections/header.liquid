@@ -105,15 +105,20 @@
           <div>
             <h1 class="text-lg text-gray-500">{{ section.settings.mobile_menu_title }}</h1>
           </div>
-          <div class="-mr-2">
+          <div class="-mr-2 text-xs text-center items-center flex">
+            SEARCH
+            <button x-on:click="searchBarOpen = true, mobileMenuOpen = false" type="button" class="whitespace-nowrap text-base text-gray-500 hover:text-gray-900">{% render 'icon-search-large' %}</button>
+            CLOSE
             <button
               x-on:click="mobileMenuOpen = false"
               type="button"
-              class="bg-white rounded-md p-2 text-gray-500"
+              class="whitespace-nowrap text-base text-gray-500 hover:text-gray-900"
             >
               {% render 'icon-close' %}
             </button>
+           
           </div>
+
         </div>
 
         <!-- NAVIGATION LINKS FOR MOBILE MENU -->
