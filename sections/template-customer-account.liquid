@@ -9,7 +9,7 @@
                         {% paginate customer.orders by 12 %}
                             {% for order in customer.orders %}
                                 <div class="relative">
-                                    <div class="w-full min-80 rounded-md gb-gray-500 overflow-hidden lg:h-80">
+                                    <div class="w-full h-80 rounded-md gb-gray-500 overflow-hidden lg:h-80">
                                         {% if order.line_items.first.image %}
                                             <img class="w-full h-full object-cover object-center" src="{{ order.line_items.first.image | img_url: 'medium' }}" alt="{{ order.line_items.first.image.alt }}">
                                         {% else %}
