@@ -5,7 +5,7 @@
         {% if number_of_orders > 0 %}
             <div class="my-6 md:my-12">
                 <h2 class="text-xl font-bold text-gray-700">Order History</h2>
-                {% paginate customer.orders by 12 %}
+                {% paginate customer.orders by 1 %}
                     <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                         {% for order in customer.orders %}
                             <div class="relative mx-2">
@@ -35,7 +35,7 @@
                         {% endfor %}
                     </div>
                     <div class="max-w-6xl mx-auto h-20">
-                        {% render 'pagination', pagination: paginate %}
+                        {% render 'pagination', pagination: paginate %} PAGINATION
                     </div>
                 {% endpaginate %}
             </div>
