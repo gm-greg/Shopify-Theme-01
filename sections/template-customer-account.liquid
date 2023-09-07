@@ -34,7 +34,7 @@
                             </div>
                         {% endfor %}
                     </div>
-                    <div class="max-w-6xl mx-auto flex flex-col justify-center items-center">
+                    <div class="max-w-6xl mx-auto">
                         {% render 'pagination', pagination: paginate %} 
                     </div>
                 {% endpaginate %}
@@ -44,5 +44,9 @@
                 <h1 class="text-base md:text-2xl font-medium">You currently have no order history.</h1>
                 </div>  
         {% endif %}
+        <div class="w-full md:w-1/4">
+            <h2 class="text-xl font-bold text-gray-700 mb-12">Account Details</h2>
+            {{ customer.default_address }}
+        </div>
     </div>
 </div>
