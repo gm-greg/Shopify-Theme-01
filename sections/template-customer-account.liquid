@@ -34,8 +34,8 @@
                             </div>
                         {% endfor %}
                     </div>
-                    <div class="mx-auto max-w-6xl h-80 bg-gray-200">
-                        {% render 'pagination', pagination: paginate %}
+                    <div class="mx-auto max-w-6xl">
+                        {% render 'pagination' | pagination: paginate %}
                     </div>
                 {% endpaginate %}
             </div>
