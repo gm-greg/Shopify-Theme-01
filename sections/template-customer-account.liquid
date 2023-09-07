@@ -1,13 +1,11 @@
 <div class="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
     <h1 class="text-3xl font-bold text-gray-700">Account</h1>
-    <div class="flex sm:block">
+    <div class="flex flex-cols-2 sm:block">
         {% assign number_of_orders = customer.orders | size %}
         {% if number_of_orders > 0 %}
             <div class="my-6 md:my-12">
                 <h2 class="text-xl font-bold text-gray-700">Order History</h2>
-                {% paginate customer.orders by 2 %}
-                    <p>Pagination Pages: {{ pagination.pages }}</p>
-                    <p>Number of Orders: {{ number_of_orders }}</p>
+                {% paginate customer.orders by 10 %}
                     <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                         {% for order in customer.orders %}
                             <div class="relative mx-2">
