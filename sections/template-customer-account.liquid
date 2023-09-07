@@ -3,10 +3,9 @@
     <div class="flex sm:block">
         {% assign number_of_orders = customer.orders | size %}
         {% if number_of_orders > 0 %}
-            {% paginate customer.orders by 3 %}
             <div class="my-6 md:my-12">
                 <h2 class="text-xl font-bold text-gray-700">Order History</h2>
-               
+                {% paginate customer.orders by 12 %}
                     <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                         {% for order in customer.orders %}
                             <div class="relative mx-2">
@@ -38,13 +37,12 @@
                     <div class="max-w-6xl mx-auto h-20">
                         {% render 'pagination', pagination: paginate %}
                     </div>
-              
+                {% endpaginate %}
             </div>
         {% else %}
-            <div class="w-full h-80 flex items-center justify-content">
+                <div class="w-full h-80 flex items-center justify-content">
                 <h1 class="text-base md:text-2xl font-medium">You currently have no order history.</h1>
-            </div>
-            {% endpaginate %}
+                </div>  
         {% endif %}
     </div>
 </div>
