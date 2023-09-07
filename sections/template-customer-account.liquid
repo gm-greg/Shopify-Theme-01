@@ -7,7 +7,7 @@
                 <h2 class="text-xl font-bold text-gray-700">Order History</h2>
                 {% paginate customer.orders by 2 %}
                     <p>Pagination Pages: {{ pagination.pages }}</p>
-                    <p>Number of Orders: {{ customer.orders | size }}</p>
+                    <p>Number of Orders: {{ number_of_orders }}</p>
                     <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                         {% for order in customer.orders %}
                             <div class="relative mx-2">
