@@ -13,14 +13,27 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-12 p-4 md:p-12">
                     <div class="w-full min-h-80 rounded-md overflow-hidden bg-gray-200 border">
                         {% if line_item.image %}
-                            TESTING
                             <img class="w-full h-full object-cover object-center" src="{{ line_item.image | img_url: 'medium' }}" alt="{{ line_item.image.alt }}">
                         {% else %}
                             {% 'product-1' | placeholder_svg_tag: 'w-full h-full object-cover object-center' %}
                         {% endif %}
                     </div>
-                    <div class="w-full">
-                        
+                    <div>
+                        <h1 class="text-xl font-medium mb-4">{{ line_item.title | link_to: line_item.product.url }}</h1>
+                        <table class="table-auto w-full mb-4">
+                            <tr>
+                                <td class="border border-gray-200 px-4 py-2">Price</td>
+                                <td class="border border-gray-200 px-4 py-2">{{ line_item.original_price }}</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-200 px-4 py-2">Quantity</td>
+                                <td class="border border-gray-200 px-4 py-2">{{ line_item.quantity }}</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-200 px-4 py-2">Final Price</td>
+                                <td class="border border-gray-200 px-4 py-2">{{ line_item.final_line_price }}</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </div>
