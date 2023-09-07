@@ -7,7 +7,7 @@
         </div>
         <a href="{{ routes.account_url }}" class="text-blue-400 hover:text-blue-700 underline font-medium">Back to Account Page</a>
     </div>
-    <div>
+    <div class="flex w-full justify-evenly">
         {% for line_item in order.line_items %}
             <div class="w-full border border-gray-200 rounded-sm mb-4 divide-y">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-12 p-4 md:p-12">
