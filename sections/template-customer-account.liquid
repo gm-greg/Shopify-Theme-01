@@ -8,8 +8,8 @@
                 {% paginate customer.orders by 3 %}
                     <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                         {% for order in customer.orders %}
-                            <div class="relative m-6">
-                                <div class="w-full h-80 rounded-lg bg-gray-500 overflow-hidden lg:h-80">
+                            <div class="relative mx-2">
+                                <div class="w-full h-80 rounded-lg bg-gray-500 overflow-hidden">
                                     {% if order.line_items.first.image %}
                                         <img class="w-full h-full object-cover object-center" src="{{ order.line_items.first.image | img_url: 'medium' }}" alt="{{ order.line_items.first.image.alt }}">
                                     {% else %}
