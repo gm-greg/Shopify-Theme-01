@@ -897,6 +897,10 @@ video {
   width: 75%;
 }
 
+.w-1\/2 {
+  width: 50%;
+}
+
 .max-w-2xl {
   max-width: 42rem;
 }
@@ -1345,6 +1349,11 @@ video {
   line-height: 1rem;
 }
 
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -1555,6 +1564,11 @@ video {
   color: rgb(96 165 250 / var(--tw-text-opacity));
 }
 
+.hover\:text-blue-700:hover {
+  --tw-text-opacity: 1;
+  color: rgb(29 78 216 / var(--tw-text-opacity));
+}
+
 .hover\:underline:hover {
   text-decoration-line: underline;
 }
@@ -1676,6 +1690,10 @@ video {
 
   .md\:flex-row {
     flex-direction: row;
+  }
+
+  .md\:items-end {
+    align-items: flex-end;
   }
 
   .md\:justify-start {
