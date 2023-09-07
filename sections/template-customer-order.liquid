@@ -3,12 +3,9 @@
         <div class="w-1/2">
             <h1 class="text-2xl font-bold text-gray-700">Order {{ order.name }}</h1>
             <p class="text-gray-500 my-2">Placed on: {{ order.created_at | date: format: 'date' }}</p>
-            {% assign green_label = "Unfulfilled" %}
-            {% if order.financial_status_label = green_label %}
-                <span class="text-sm text-white bg-green-800 rounded-full px-4 py-1 my-2">{{ order.financial_status_label }}</span>
-            {% else %}
+            
                 <span class="text-sm text-white gb-gray-700 rounded-full px-4 py-1 my-2">{{ order.financial_status_label }}</span>
-            {% endif %}
+           
            
         </div>
         <a href="{{ routes.account_url }}" class="text-blue-400 hover:text-blue-700 underline font-medium">Back to Account Page</a>
@@ -23,6 +20,9 @@
                         {% else %}
                             {% 'product-1' | placeholder_svg_tag: 'w-full h-full object-cover object-center' %}
                         {% endif %}
+                    </div>
+                    <div class="w-full">
+                        TESTING
                     </div>
                 </div>
             </div>
