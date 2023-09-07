@@ -1,12 +1,12 @@
 <div class="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
     <h1 class="text-3xl font-bold text-gray-700">Account</h1>
-    <div class="block md:flex gap-4">
+    <div class="md:flex gap-4">
         {% assign number_of_orders = customer.orders | size %}
         {% if number_of_orders > 0 %}
-            <div class="my-6 md:my-12 max-w-6xl mx-auto">
+            <div class="my-6 md:my-12">
                 <h2 class="text-xl font-bold text-gray-700">Order History</h2>
                 {% paginate customer.orders by 2 %}
-                    <div class="mt-6 grid grid-cols-3 gap-y-10 gap-x-6 sm:grid-cols-1 xl:gap-x-8">
+                    <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-3 xl:gap-x-8">
                         {% for order in customer.orders %}
                             <div class="relative">
                                 <div class="w-full h-80 rounded-lg bg-gray-500 overflow-hidden lg:h-80">
@@ -34,7 +34,7 @@
                             </div>
                         {% endfor %}
                     </div>
-                    <div class="mx-auto">
+                    <div class="mx-auto max-w-6xl">
                         {% render 'pagination', pagination: paginate %}
                     </div>
                 {% endpaginate %}
