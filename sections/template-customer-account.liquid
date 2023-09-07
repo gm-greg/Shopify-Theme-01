@@ -3,10 +3,10 @@
     <div class="block md:flex gap-4">
         {% assign number_of_orders = customer.orders | size %}
         {% if number_of_orders > 0 %}
-            <div class="w-full flex my-6 md:my-12">
+            <div class="w-full my-6 md:my-12">
                 <h2 class="text-xl font-bold text-gray-700">Order History</h2>
-                <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
-                    {% paginate customer.orders by 3 %}
+                {% paginate customer.orders by 3 %}
+                    <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
                         {% for order in customer.orders %}
                             <div class="relative">
                                 <div class="w-full h-80 rounded-md bg-gray-500 overflow-hidden lg:h-80">
@@ -31,14 +31,13 @@
                                     </div>
                                     
                                 </div>
-                                <div class="mt-4 flex items-start justify-between"></div>
                             </div>
                         {% endfor %}
-                        <div class="max-w-6xl mx-auto">
-                            {% render 'pagination', pagination: paginate %}
-                          </div>
-                    {% endpaginate %}
-                </div>
+                    </div>
+                    <div class="max-w-6xl mx-auto">
+                        {% render 'pagination', pagination: paginate %}
+                    </div>
+                {% endpaginate %}
             </div>
         {% else %}
                 <div class="w-full h-80 flex items-center justify-content">
