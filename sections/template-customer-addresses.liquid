@@ -138,6 +138,7 @@
     class CustomerAddress {
         constructor() {
             this.initCustomerAddress();
+            this.customerAddressSelector();
         }
         initCustomerAddress() {
             const allAddressesSelector = document.querySelectorAll("select[data-country-selector]");
@@ -187,6 +188,17 @@
                 }
             }
             return selectedOption;
+        }
+
+        customerAddressSelector() {
+            const addressesSelector = document.querySelectorAll('select[data-country-selector]');
+            if(addressesSelector.length < 1) return;
+
+            addressesSelector.forEach(select => {
+                select.addEventListener('change', function(e) {
+                    console.log("Testing 123");
+                });
+            })
         }
     }
     const customerAddress = new CustomerAddress();
