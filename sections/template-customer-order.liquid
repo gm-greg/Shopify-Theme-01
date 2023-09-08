@@ -57,6 +57,11 @@
                 </div>
                 <div class="p-4 md:p-12">
                     <h1 class="text-lg font-medium mb-4">Fulfillment</h1>
+                    {% if line_item.successfully_fulfilled_quantity > 0 %}
+                        {{ line_item.successfully_fulfilled_quantity }}
+                    {% else %}
+                        
+                    {% endif %}
                 </div>
             </div>
         {% endfor %}
