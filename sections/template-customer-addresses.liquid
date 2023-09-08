@@ -285,7 +285,7 @@
                 var provinces = selectedCountry.dataset.provinces;
                 var arrayOfProvinces = JSON.parse(provinces);
                 var provinceSelector = document.querySelector(`#address_province_${select.dataset.id}`);
-                console.log(provinceSelector);
+                
                 if(arrayOfProvinces.length < 1) {
                     provinceSelector.setAttribute('disabled', 'disabled');
                 } else {
