@@ -61,7 +61,14 @@
                     <p class="mb-3">We have succesfully fulfilled {{ line_item.successfully_fulfilled_quantity }} items of your order. </p>
                     <p class="mb-3">Tracking Company: {{ line_item.fulfillment.tracking_company }}</p>
                     <p class="mb-3">Tracking Number: {{ line_item.fulfillment.tracking_number }}</p>    
-                   
+                    <a target="_blank" 
+                       href="{{ line_item.fulfillment.tracking_url }}" 
+                       class="flex w-max text-sm text-white font-medium bg-gray-700 hover:bg-gray-900 px-4 py-1 rounded-lg">
+                        Track Your Order: 
+                        <span class="ml-4">
+                            {% render 'icon-link' %}
+                        </span>
+                    </a>
                     {% else %}
                         Your order contains unfilfilled items. 
                     {% endif %}
