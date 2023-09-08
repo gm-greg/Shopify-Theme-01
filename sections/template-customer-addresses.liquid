@@ -257,7 +257,14 @@
 
         initDeleteAddressButtons() {
             const deleteButtons = document.querySelectorAll("button[data-delete-address]");
-            console.log(deleteButtons);
+            if(deleteButtons.length < 1) return;
+
+            deleteButtons.forEach(button => {
+                button.addEventListener('click', function(e){
+                    console.log("Click is working");
+                })
+            })
+            
         }
 
         initCustomerAddress() {
