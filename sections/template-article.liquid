@@ -4,7 +4,7 @@
       {% when 'article_title' %}
         <div class="flex items-center justify-center">
           <div class="max-w-7xl">
-            <a href="{{ blog_url }}" class="text-base text-gray-500 uppercase hover:text-gray-900 font-bold">
+            <a href="{{ blog.url }}" class="text-base text-gray-500 uppercase hover:text-gray-900 font-bold">
               {{- blog.title -}}
             </a>
             <h1 class="text-4xl md:text-6xl font-medium" itemprop="headline">
@@ -39,7 +39,7 @@
             <img
               itemprop="image"
               class="w-full h-80 md:h-96 object-cover object-center"
-              src="{{ article.image | img_url: 'large' }}"
+              src="{{ article.image | image_url: 'large' }}"
               alt="{{ article.image.alt }}"
             >
           {% else %}
@@ -173,7 +173,7 @@
     {% endif %}
     {% if article.image %}
       "image": [
-        {{ article.image | img_url: "medium" | prepend: 'https:' | json }}
+        {{ article.image | image_url: "medium" | prepend: 'https:' | json }}
         ],
     {% endif %}
     "datePublished": {{ article.published_at | date: format: "default" | json }},
