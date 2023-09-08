@@ -153,7 +153,7 @@
                 var arrayOfProvinces = JSON.parse(provinces);
                 var provinceSelector = document.querySelector(`#address_province_${select.dataset.id}`);
                 // console.log(provinceSelector);
-                if(arrayOfProvinces < 1) {
+                if(arrayOfProvinces.length < 1) {
                     provinceSelector.setAttribute('disabled', 'disabled');
                 } else {
                     provinceSelector.removeAttribute('disabled');
