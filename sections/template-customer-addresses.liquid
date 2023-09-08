@@ -197,10 +197,10 @@
             addressesSelector.forEach(select => {
                 select.addEventListener('change', function(e) {
                     var provinces = this.options[this.selectedIndex].dataset.provinces;
-                    var finalArrayOfProvinces = JSON.parse(provinces);
+                    var arrayOfProvinces = JSON.parse(provinces);
                     var provinceSelector = document.querySelector(`address_province_${this.dataset.id}`);
 
-                    if(finalArrayOfProvinces.length < 1) {
+                    if(arrayOfProvinces.length < 1) {
                         provinceSelector.setAttribute('disabled', 'disabled');
                     } else {
                         provinceSelector.removeAttribute('disabled');
@@ -208,8 +208,8 @@
 
                     provinceSelector.innerHTML = '';
                     var options = '';
-                    for(var index = 0; index < finalArrayOfProvinces.length; index++) {
-                        options += `<option value="${finalArrayOfProvinces[index][0]}">${finalArrayOfProvinces[index][0]}</option>`;
+                    for(var index = 0; index < arrayOfProvinces.length; index++) {
+                        options += `<option value="${arrayOfProvinces[index][0]}">${arrayOfProvinces[index][0]}</option>`;
                     }
                     provinceSelector.innerHTML = options;
 
