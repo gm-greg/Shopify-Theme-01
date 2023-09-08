@@ -203,7 +203,9 @@
                     if(arrayOfProvinces.length < 1) {
                         provinceSelector.setAttribute('disabled', 'disabled');
                     } else {
-                        provinceSelector.removeAttribute('disabled');
+                        if(provinceSelector.getAttribute('disabled')) {
+                            provinceSelector.removeAttribute('disabled');
+                        }
                     }
 
                     provinceSelector.innerHTML = '';
