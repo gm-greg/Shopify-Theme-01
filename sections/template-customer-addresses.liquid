@@ -7,7 +7,7 @@
     <div x-show="new_address" class="h-full w-full fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto z-50">
         <div class="relative max-w-md mx-auto bg-white border top-20 p-4">
             <div class="flex items-center justify-between mb-4">
-                <h2 class="font-medium text-lg">New Address</h2>
+                <h2 class="font-medium text-lg">NEW ADDRESS</h2>
                 <button x-on:click="new_address = false" class="text-gray-500">{% render 'icon-close' %}</button>
             </div>
             {% form 'customer_address', customer.new_address %}
@@ -131,3 +131,15 @@
         {% endpaginate %}
     </div>
 </div>
+
+<script>
+    class customerAddress {
+        constructor() {
+            this.initCustomerAddress();
+        }
+        initCustomerAddress() {
+            console.log('hello world')
+        }
+    }
+    const customerAddress = new customerAddress();
+</script>
