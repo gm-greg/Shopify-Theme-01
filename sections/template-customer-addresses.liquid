@@ -152,7 +152,12 @@
                 var provinces = selectedCountry.dataset.provinces;
                 var arrayOfProvinces = JSON.parse(provinces);
                 var provinceSelector = document.querySelector(`#address_province_${select.dataset.id}`);
-                console.log(provinceSelector);
+                // console.log(provinceSelector);
+                if(arrayOfProvinces < 1) {
+                    provinceSelector.setAttribute('disabled', 'disabled');
+                } else {
+                    provinceSelector.removeAttribute('disabled');
+                }
             })
         }
 
@@ -160,11 +165,12 @@
             var option, selectedOption;
             for(var index = 0; index < select.options.length; index++){
                 option = select.options[index];
-            }
-            if(option === select.getAttribute('value')) {
-                selectedOption = option;
-                selectedOption.setAttribute('selected', 'selected');
-                break;
+                
+                if(option === select.getAttribute('value')) {
+                    selectedOption = option;
+                    selectedOption.setAttribute('selected', 'selected');
+                    break;
+                }
             }
             return selectedOption;
         }
