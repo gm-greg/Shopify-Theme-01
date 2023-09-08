@@ -1,4 +1,4 @@
-<div class="max-w-6xl mx-auto px-4 py-12">
+<div class="max-w-6xl flex flex-cols-1 justify-center px-4 py-12">
     <div class="flex items-start md:items-end justify-between my-5">
         <div class="w-1/2">
             <h1 class="text-2xl font-bold text-gray-700">Order {{ order.name }}</h1>
@@ -49,7 +49,7 @@
                                 <p>Street: {{ customer.shipping_address.street }}</p>
                                 <p>City: {{ customer.shipping_address.city }}</p>
                                 <p>State/Province: {{ customer.shipping_address.province }}</p>
-                                <p>ZIP?Postal Code: {{ customer.shipping_address.zip }}</p>
+                                <p>ZIP/Postal Code: {{ customer.shipping_address.zip }}</p>
                                 <p>Country: {{ customer.shipping_address.country }}</p>
                             </div>
                         </div>
