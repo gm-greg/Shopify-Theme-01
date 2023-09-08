@@ -64,7 +64,8 @@
                     <select class="border px-4 py-3 focus:outline-none w-full text-gray-700" 
                            name="address[country]" 
                            id="address_country_{{ form.id }}" 
-                           value="{{ form.country }}">
+                           value="{{ form.country }}"
+                           data-country-selector>
                            {{ all_country_option_tags }}
                     </select>
                 </div>
@@ -138,7 +139,9 @@
             this.initCustomerAddress();
         }
         initCustomerAddress() {
-            console.log('hello world')
+            const allAddressesSelector = document.querySelectorAll("select[data-country-selector]");
+            if(allAddressesSelector.length < 1) return;
+            console.log(allAddressesSelector);
         }
     }
     const customerAddress = new CustomerAddress();
