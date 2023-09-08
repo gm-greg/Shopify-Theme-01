@@ -11,7 +11,7 @@
         {% for line_item in order.line_items %}
             <div class="w-full border border-gray-200 rounded-sm mb-4 divide-y">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-12 p-4 md:p-12">
-                    <div class="w-full h-80 min-h-80 rounded-md overflow-hidden bg-gray-200 border">
+                    <div class="w-full h-80 min-h-80 rounded-xl overflow-hidden bg-gray-200 border">
                         {% if line_item.image %}
                             <img class="w-full h-full object-cover object-center" src="{{ line_item.image | img_url: 'medium' }}" alt="{{ line_item.image.alt }}">
                         {% else %}
@@ -42,7 +42,17 @@
                     </div>
                     <div>
                         <h1 class="font-medium mb-4">Delivery Address</h1>
-                        <div class="text-gray-500 mb-4">{{ order.shipping_address | format: address }}</div>
+                        <div class="text-gray-500 mb-4">
+                            <div>
+                                <p>Address Line 1: {{ customer.shipping_address.address1 }}</p>
+                                <p>Address Line 2: {{ customer.shipping_address.address2 }}</p>
+                                <p>Street: {{ customer.shipping_address.street }}</p>
+                                <p>City: {{ customer.shipping_address.city }}</p>
+                                <p>State/Province: {{ customer.shipping_address.province }}</p>
+                                <p>ZIP?Postal Code: {{ customer.shipping_address.zip }}</p>
+                                <p>Country: {{ customer.shipping_address.country }}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
