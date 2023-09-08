@@ -10,7 +10,7 @@
                 <h2 class="font-medium text-lg">New Address</h2>
                 <button x-on:click="new_address = false" class="text-gray-500">{% render 'icon-close' %}</button>
             </div>
-            {% form 'customer_address', customer.new_adress %}
+            {% form 'customer_address', customer.new_address %}
                 <div class="mb-4">
                     <label for="address_fname_{{ form.id }}" class="uppercase text-gray-700 text-xs font-medium mb-2">First Name</label>
                     <input class="border px-4 py-3 focus:outline-none w-full text-gray-700" 
