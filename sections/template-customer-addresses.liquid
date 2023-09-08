@@ -6,7 +6,7 @@
     </div>
     div.
     <div>
-        {% paginate customer.addresses by 10 %}
+        {% paginate customer.addresses by 2 %}
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-4 md:p-12 gap-4 lg:gap-12">
                 {% for address in customer.addresses %}              
                     <div>
