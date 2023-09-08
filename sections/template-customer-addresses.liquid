@@ -198,14 +198,12 @@
                 select.addEventListener('change', function(e) {
                     var provinces = this.options[this.selectedIndex].dataset.provinces;
                     var arrayOfProvinces = JSON.parse(provinces);
-                    var provinceSelector = document.querySelector(`address_province_${this.dataset.id}`);
+                    var provinceSelector = document.querySelector(`#address_province_${this.dataset.id}`);
 
                     if(arrayOfProvinces.length < 1) {
                         provinceSelector.setAttribute('disabled', 'disabled');
                     } else {
-                        if(provinceSelector.getAttribute('disabled')) {
-                            provinceSelector.removeAttribute('disabled');
-                        }
+                        provinceSelector.removeAttribute('disabled');
                     }
 
                     provinceSelector.innerHTML = '';
