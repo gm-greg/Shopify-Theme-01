@@ -48,7 +48,7 @@
           <div class="swiper h-94">
             <div class="swiper-wrapper">
               {% for media in product.media %}
-                <div class="swiper-slide swiper-pagination-bottom: 8px;">
+                <div class="swiper-slide">
                   <div class="h-[100vw] overflow-hidden p-2">
                     {% render 'product-media', media: media %}
                   </div>
@@ -296,7 +296,9 @@
             prevEl: '.swiper-button-prev',
             nextEl: '.swiper-button-next',
           }
-        }); 
+        });
+       
+
       } catch(e) { console.log("Swiper JS is not defined"); }
   })
   
