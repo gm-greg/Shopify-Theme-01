@@ -176,7 +176,17 @@
       </div>
     </div>
   </div>
+  <style>
+    .media model-viewer {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
 
+    }
+  </style>
   <div id="productModelModal">
       <div x-show="productModalOpen" class="w-full h-full z-50 items-center fixed inset-0">
           <div class="relative w-full h-full bg-white">
@@ -188,7 +198,7 @@
                       </button>
                   </div>
 
-                  <div id="body" class="block relative">
+                  <div id="body" class="media block relative" style="padding-top: 100%;">
 
                   </div>
               </div>
