@@ -48,19 +48,19 @@
             <div class="swiper-wrapper">
               {% for media in product.media %}
                 <div class="swiper-slide">
-                  <div class="h-[100vw] overflow-hidden p-2">
+                  <div class="h-[100vw] overflow-hidden p-2 mb-8">
                     {% render 'product-media', media: media %}
                   </div>
                 </div>
               {% endfor %}
             </div>
-             <div class="mt-6">
+
               <div class="swiper-pagination"></div>
 
               <div class="swiper-button-prev"></div>
 
               <div class="swiper-button-next"></div>
-            </div> 
+
           </div>
         </div>
       </div>
