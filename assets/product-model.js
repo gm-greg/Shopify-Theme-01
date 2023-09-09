@@ -10,14 +10,14 @@ class ProductModel extends HTMLElement {
     }
 
     getModal() {
-
+        const modal = document.getElementById('productModelModal');
+        return modal;
     }
 
     openModelModal() {
-        console.log("The element is working correctly.");
         const mediaID = this.getMediaID();
-        // const modal = this.getModal();
-        console.log(mediaID);
+        const modal = this.getModal();
+        console.log(modal);
     }
 }
 
