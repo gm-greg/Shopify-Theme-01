@@ -3,6 +3,7 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
 <style>
+  
   .swiper-button-prev,
   .swiper-button-next {
     color: black;
@@ -47,8 +48,8 @@
           <div class="swiper h-94">
             <div class="swiper-wrapper">
               {% for media in product.media %}
-                <div class="swiper-slide">
-                  <div class="h-[100vw] overflow-hidden p-2 mb-8">
+                <div class="swiper-slide --swiper-pagination-bottom: 8px;">
+                  <div class="h-[100vw] overflow-hidden p-2">
                     {% render 'product-media', media: media %}
                   </div>
                 </div>
