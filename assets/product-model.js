@@ -16,7 +16,7 @@ class ProductModel extends HTMLElement {
     openModelModal() {
         console.log("The element is working correctly.");
         const mediaID = this.getMediaID();
-        const modal = this.getModal();
+        // const modal = this.getModal();
         console.log(mediaID);
     }
 }
