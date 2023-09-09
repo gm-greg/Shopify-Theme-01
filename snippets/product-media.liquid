@@ -13,7 +13,7 @@
     <product-model>
       <div>
         <button class="w-full h-full bg-gray-100 border relative" x-on:click="productModalOpen = true">
-          <span class="absolute">{% render 'icon-model-viewer' %}</span>
+          <span class="absolute top-0 left-0">{% render 'icon-model-viewer' %}</span>
           <img src="{{ media| img_url: 'large'}}" 
                alt="{{ media.preview_image.alt }}"
                class="w-full h-full object-cover"
